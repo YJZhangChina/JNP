@@ -9,7 +9,7 @@ public class WriteEventHandler implements IEventHandler {
 
     public void handleEvent(SelectionKey handle) throws IOException {
         SocketChannel socketChannel = (SocketChannel) handle.channel();
-        ByteBuffer input = (ByteBuffer)handle.attachment();
+        ByteBuffer input = (ByteBuffer) handle.attachment();
         socketChannel.write(input);
         socketChannel.close();
     }
