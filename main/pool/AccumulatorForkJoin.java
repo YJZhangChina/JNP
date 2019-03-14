@@ -33,7 +33,7 @@ public class AccumulatorForkJoin implements IAccumulator {
             } else {
                 int middle = from + (to - from) / 2;
                 AccumulatorForkJoinImpl left = new AccumulatorForkJoinImpl(nums, from, middle);
-                AccumulatorForkJoinImpl right = new AccumulatorForkJoinImpl(nums, to, middle);
+                AccumulatorForkJoinImpl right = new AccumulatorForkJoinImpl(nums, middle + 1, to);
                 left.fork();
                 right.fork();
                 return left.join() + right.join();
